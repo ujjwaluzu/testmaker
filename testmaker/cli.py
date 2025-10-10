@@ -5,6 +5,9 @@ from testmaker.generator import generate_test_from_file
 from testmaker.writer import generate_ai_test_file  
 
 def main():
+    huggingFaceApi = ""
+    if len(sys.argv) == 2 and sys.argv[1] == "api":
+        huggingFaceApi = sys.argv[1]
     if len(sys.argv) < 2 or len(sys.argv) > 3:
         print("Usage: testmaker <source.py> [ai]")
         sys.exit(1)
