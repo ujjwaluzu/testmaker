@@ -1,6 +1,7 @@
 # CLI entrypoint (argparse/typer)
 import sys
 import os
+from testmaker.generator import generate_test_from_file
 
 def main():
     if len(sys.argv) > 2:
@@ -21,6 +22,6 @@ def main():
 
 
     test_code = generate_test_from_file(input_file)
-    with open(output_file, "w"):
+    with open(output_file, "w") as f:
         f.write(test_code)
     print(f"test generated at {output_file}")
